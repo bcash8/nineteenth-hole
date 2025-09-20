@@ -1,4 +1,10 @@
-import { nextJsConfig } from "@repo/eslint-config/next-js";
+import { config as baseConfig } from "@repo/eslint-config/react-internal";
+import { defineConfig, globalIgnores } from "eslint/config";
 
-/** @type {import("eslint").Linter.Config} */
-export default nextJsConfig;
+export default defineConfig([
+  ...baseConfig,
+  globalIgnores(["dist"]),
+  {
+    files: ["**/*.{ts,tsx}"],
+  },
+]);
