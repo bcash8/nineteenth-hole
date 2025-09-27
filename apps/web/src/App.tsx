@@ -1,10 +1,9 @@
-import { Test } from "./components/Test";
-import { Button } from "@repo/ui/button";
+import { GameArea } from "./components/GameArea";
+
 function App() {
   return (
     <>
-      <Test />
-      <Button appName="TEST">HEre</Button>
+      <GameArea />
     </>
   );
 }

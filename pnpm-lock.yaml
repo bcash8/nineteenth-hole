@@ -20,6 +20,9 @@ importers:
 
   apps/web:
     dependencies:
+      '@repo/shared':
+        specifier: workspace:*
+        version: link:../../packages/shared
       '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -73,24 +76,6 @@ importers:
         specifier: ^0.10.3
         version: 0.10.3(eslint@9.36.0)(optionator@0.9.4)(typescript@5.8.3)(vite@7.1.6(@types/node@22.15.3))
 
-  packages/data:
-    devDependencies:
-      '@repo/eslint-config':
-        specifier: workspace:*
-        version: link:../eslint-config
-      '@repo/typescript-config':
-        specifier: workspace:*
-        version: link:../typescript-config
-      '@types/node':
-        specifier: ^22.15.3
-        version: 22.15.3
-      eslint:
-        specifier: ^9.34.0
-        version: 9.34.0
-      typescript:
-        specifier: 5.9.2
-        version: 5.9.2
-
   packages/eslint-config:
     devDependencies:
       '@eslint/js':
@@ -129,6 +114,24 @@ importers:
       typescript-eslint:
         specifier: ^8.40.0
         version: 8.40.0(eslint@9.34.0)(typescript@5.9.2)
+
+  packages/shared:
+    devDependencies:
+      '@repo/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+      '@types/node':
+        specifier: ^22.15.3
+        version: 22.15.3
+      eslint:
+        specifier: ^9.34.0
+        version: 9.36.0
+      typescript:
+        specifier: 5.9.2
+        version: 5.9.2
 
   packages/typescript-config: {}
 
