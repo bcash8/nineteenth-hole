@@ -53,7 +53,7 @@ export function GolfMapCanvas({ map, width = 600, height = 850 }: Props) {
     const scaleY = canvas.height / (boundaryHeight * pixelsPerMeter);
     const fitScale = Math.min(scaleX, scaleY);
 
-    const clampedScale = Math.max(0.2, Math.min(fitScale, 10));
+    const clampedScale = Math.max(0.2, Math.min(fitScale, 25));
 
     const boundaryCP = {
       x: (minX + maxX) / 2,
@@ -197,8 +197,8 @@ export function GolfMapCanvas({ map, width = 600, height = 850 }: Props) {
         const zoomFactor = 1.1;
         const requested =
           e.deltaY < 0 ? scale * zoomFactor : scale / zoomFactor;
-        const clamped = Math.max(0.2, Math.min(requested, 10));
-
+        const clamped = Math.max(0.2, Math.min(requested, 25));
+        console.log(clamped);
         const worldX = (mouseX - pan.x) / (scale * pixelsPerMeter);
         const worldY = (mouseY - pan.y) / (scale * pixelsPerMeter);
 
